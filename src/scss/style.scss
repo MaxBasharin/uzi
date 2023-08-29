@@ -42,12 +42,12 @@
     z-index: 9999;
     overflow: hidden;
     position: fixed;
-    right: 20px;
+    left: 20px;
     bottom: 90px;
     border-radius: 20px;
     border-width: 5px;
-    width: 150px;
-    height: 200px;
+    width: 130px;
+    height: 170px;
     border: 5px solid #fff;
     transition: all 0.2s ease-out;
     cursor: pointer;
@@ -57,8 +57,8 @@
     }
 
     &.active {
-      width: 180px;
-      height: 280px;
+      width: 150px;
+      height: 250px;
 
       .icon-play {
         display: none;
@@ -286,6 +286,24 @@ header.fixed {
   }
 }
 
+.summary {
+  padding: 0 0 60px 0;
+  background-color: $grayColorBg;
+
+  &__video {
+    padding: 20px;
+    box-shadow: $blockBoxShadow;
+    background-color: #fff;
+    border-radius: 15px;
+    height: 435px;
+    width: 700px;
+    iframe {
+      border-radius: 15px;
+    
+    }
+  }
+}
+
 .form-fixed__block {
   position: relative;
   padding: 0 0 120px 0;
@@ -451,6 +469,12 @@ letter-spacing: -1px;
         object-fit: cover;
         border-radius: 0 15px 15px 15px;
       }
+      video {
+        border-radius: 0 15px 15px 15px;
+        width: 100%;
+        height: auto;
+        max-height: 100%;
+      }
     }
   }
 
@@ -542,7 +566,6 @@ letter-spacing: -1px;
       img {
         width: 100%;
         height: 100%;
-        object-fit: cover;
         border-radius: $mainRadius;
       }
 
@@ -779,7 +802,7 @@ letter-spacing: -1px;
 
     .swiper-slide {
       width: 100%;
-
+      position: relative;
       img {
         width: 100%;
         height: 100%;
@@ -787,7 +810,31 @@ letter-spacing: -1px;
         object-fit: cover;
         border-radius: 15px;
       }
+      &__btn {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        top: 50%;
+        left: 47%;
+        transform: translate(-50%, -50%);
+        z-index: 1;
+        border-radius: 5px;
+        padding: 5px 10px;
+        color: #262626;
+        background-color: #fff;
+        font-size: 18px;
+       
     }
+    .icon-play {
+      width: 50px;
+      height: 50px;
+      position: absolute;
+    top: -40%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 1;
+    }
+  }
   }
 
 }
@@ -1202,11 +1249,36 @@ letter-spacing: -1px;
         margin-bottom: 20px;
 
         &-item {
+          position: relative;
           video {
             border-radius: 15px;
             width: 100%;
             height: auto;
             max-height: 100%;
+          }
+          img {
+            border-radius: 15px;
+            width: 100%;
+            height: auto;
+            max-height: 100%;
+          }
+          .info__video-btn {
+            display: flex;
+            align-items: center;
+            position: absolute;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1;
+            border-radius: 5px;
+            padding: 5px 10px;
+            color: #262626;
+            background-color: #fff;
+            font-size: 14px;
+            .icon-play {
+              width: 20px;
+              height: 20px;
+              margin-right: 10px;
+            }
           }
         }
       }
@@ -3899,8 +3971,9 @@ letter-spacing: -1px;
     border-radius: 5px;
     padding: 6px 10px;
     background-color: #fff;
-
+    margin-right: 10px;
   }
+ 
 
   &-btn {
     display: flex;
