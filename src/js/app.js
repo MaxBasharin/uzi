@@ -86,6 +86,7 @@ const swiperNews = new Swiper('.news__slider', {
     nextEl: '.swiper-button-next',
     prevEl: '.swiper-button-prev',
   },
+  
   speed: 500,
   slidesPerView: 3,
   spaceBetween: 30,
@@ -216,11 +217,7 @@ function toggleAccordion() {
     // otherwise, remove the open class
     item.classList.remove('active');
   });
-  setTimeout(function () {
-    $('html, body').animate({
-      scrollTop: $('.direction__accordion-item.active').offset().top - 50,
-    });
-  }, 500);
+
 }
 
 items.forEach(question => question.addEventListener('click', toggleAccordion));
@@ -276,6 +273,8 @@ $('.diplom__slider').slick({
   ]
 });
 
+
+
 $(function () {
   $(".accordion > .accordion__item.active").children(".accordion__body").slideDown();
   $(".accordion > .accordion__item").click(function () {
@@ -305,16 +304,6 @@ $(function () {
 });
 
 
-// $(function () {
-//   $(".info__accordion-header").click(function(){
-//     $(this).siblings('.info__accordion-header').removeClass('active');
-//     $(this).toggleClass('active');
-    
-//   $(this).parent(".info__accordion-item").find(".info__accordion-content").slideToggle();
-//   $(this).parent(".info__accordion-item").prevAll(".info__accordion-item").find(".info__accordion-content").slideUp();
-//   $(this).parent(".info__accordion-item").nextAll(".info__accordion-item").find(".info__accordion-content").slideUp();
-//   });
-// });
 
 $(function() {
   $('.info__accordion .info__accordion-item:nth-child(1) .info__accordion-header');
@@ -432,7 +421,7 @@ $(function() {
       $(this).children('.icon-close').addClass('active')
       $(this).children('.video-widget__video--one').css('display', 'none')
       $(this).append(` <video class="video-widget__video video-widget__video--two" loop="" autoplay="" playsinline="" preload="auto" controlslist="nodownload" disablepictureinpicture="">
-      <source src="static/video/video-widget.mp4" type="video/mp4">
+      <source src="static/video/oksan.mp4" type="video/mp4">
       </video> `);
     }
     else {
@@ -442,41 +431,7 @@ $(function() {
     }
   })
 
-  $.getJSON("static/trips.json", function (data) {
-    var trips = data.trips;
-  
-    trips.forEach(function (trip) {
-      var city = trip.city;
-      var color = trip.color;
-      var startDate = trip.start_date;
-      var endDate = trip.end_date;
-      var status = trip.status;
-  
-      var html = '<div class="schedule__inner">';
-      html += '<div class="schedule__inner-item__town">' + city;
-      html +=
-        '<span class="schedule__inner-item__color schedule__inner-item__color--' +
-        color +
-        '"></span>';
-      html += "</div>";
-      html += '<div class="schedule__inner-item__block">';
-      html +=
-        '<div class="schedule__inner-item__date">' +
-        startDate +
-        " — " +
-        endDate +
-        "</div>";
-      html +=
-        '<div class="schedule__inner-item__btn"><button class="btn">' +
-        status +
-        "</button></div>";
-      html += "</div>";
-      html += "</div>";
-  
-      $(".schedule").append(html);
-    });
-  });
-  
+ 
   $.getJSON("static/trips.json", function (data) {
     var currentDate = new Date();
     var closestStartDate = null;
@@ -564,3 +519,57 @@ $.getJSON("static/trips.json", function(data) {
   });
   $("select").html(options);
 });
+
+$.getJSON("static/trips.json", function (data) {
+  var trips = data.trips;
+
+  trips.forEach(function (trip) {
+    var city = trip.city;
+    var color = trip.color;
+    var startDate = trip.start_date;
+    var endDate = trip.end_date;
+    var status = trip.status;
+
+    var html = '<div class="schedule__inner">';
+    html += '<div class="schedule__inner-item__town">' + city;
+    html +=
+      '<span class="schedule__inner-item__color schedule__inner-item__color--' +
+      color +
+      '"></span>';
+    html += "</div>";
+    html += '<div class="schedule__inner-item__block">';
+    html +=
+      '<div class="schedule__inner-item__date">' +
+      startDate +
+      " — " +
+      endDate +
+      "</div>";
+    html +=
+      '<div class="schedule__inner-item__btn"><button class="btn btn--modal-json">' +
+      status +
+      "</button></div>";
+    html += "</div>";
+    html += "</div>";
+
+    $(".schedule").append(html);
+  });
+});
+
+$('.btn--modal').click(function () {
+  $.fancybox.open({
+    src: '#form--modal',
+    type: 'inline'
+  });
+});
+function openModalWithDelay() {
+  setTimeout(function() {
+    $('.btn--modal-json').click(function () {
+      $.fancybox.open({
+        src: '#form--modal',
+        type: 'inline'
+      });
+    });
+  }, 10000);
+}
+
+openModalWithDelay();
