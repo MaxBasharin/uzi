@@ -78,8 +78,19 @@ const swiperWide = new Swiper('.wide__slider', {
     prevEl: '.swiper-button-prev',
   },
   speed: 500,
-  slidesPerView: 5,
-  spaceBetween: 30,
+  spaceBetween: 20,
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+    991: {
+      slidesPerView: 5
+    }
+  
+  }
 })
 const swiperNews = new Swiper('.news__slider', {
   navigation: {
@@ -90,6 +101,18 @@ const swiperNews = new Swiper('.news__slider', {
   speed: 500,
   slidesPerView: 3,
   spaceBetween: 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+    991: {
+      slidesPerView: 3
+    }
+  
+  }
 })
 
 const swiperReviews = new Swiper('.reviews__slider', {
@@ -99,8 +122,19 @@ const swiperReviews = new Swiper('.reviews__slider', {
   },
   speed: 500,
   loop: true,
-  slidesPerView: 3,
   spaceBetween: 30,
+  breakpoints: {
+    320: {
+      slidesPerView: 1
+    },
+    480: {
+      slidesPerView: 2
+    },
+    991: {
+      slidesPerView: 3
+    }
+  
+  }
 })
 
 const swiperEducation = new Swiper('.education__slider', {
@@ -141,27 +175,6 @@ const swiperGraduate = new Swiper(".graduate__slider", {
 
 $(function () {
 
-  var header = $("#header"),
-    introH = $("#header").innerHeight(),
-    scrollOffset = $(window).scrollTop();
-  checkScroll(scrollOffset);
-
-  $(window).on("scroll", function () {
-    scrollOffset = $(this).scrollTop();
-    checkScroll(scrollOffset);
-  });
-
-  function checkScroll(scrollOffset) {
-    if (scrollOffset >= introH) {
-      header.addClass("fixed");
-    } else {
-      header.removeClass("fixed");
-    }
-  }
-});
-
-$(function () {
-
   var formFixed = $("#form-fixed"),
   formFixedActive = $("#form-fixed").innerHeight() + 3000,
     scrollOffset = $(window).scrollTop();
@@ -180,26 +193,6 @@ $(function () {
     }
   }
 });
-
-// const formFixed = document.querySelector(".form-fixed");
-
-// window.addEventListener("scroll", function() {
-//   const formFixedTop = formFixed.getBoundingClientRect().top;
-//   const windowHeight = window.innerHeight;
-
-//   if (formFixedTop < windowHeight) {
-//     formFixed.classList.add("fixed");
-//   } else {
-//     formFixed.classList.remove("fixed");
-//   }
-// });
-
-// $(function() {
-//   $('.direction__accordion-item').on('click', function() {
-//     $('.direction__accordion-item').removeClass('active');
-//     $(this).addClass('active');
-//   });
-// });
 
 let accordion = document.querySelector('.direction__accordion');
 let items = accordion.querySelectorAll('.direction__accordion-item');
@@ -221,26 +214,6 @@ function toggleAccordion() {
 }
 
 items.forEach(question => question.addEventListener('click', toggleAccordion));
-
-// let accordion = document.querySelector('.direction__accordion');
-// let items = accordion.querySelectorAll('.direction__accordion-item');
-// let title = accordion.querySelectorAll('.accordion__toggle');
-
-// function toggleAccordion() {
-//   let thisItem = this.parentNode;
-
-//   items.forEach(item => {
-//     if (thisItem == item ) {
-//       // if this item is equal to the clicked item, open it.
-//       thisItem.classList.toggle('active');
-//       return;
-//     } 
-//     // otherwise, remove the open class
-//     item.classList.remove('active');
-//   });
-// }
-
-// title.forEach(question => question.addEventListener('click', toggleAccordion));
 
 $('.diplom__slider').slick({
   infinite: true,
@@ -541,7 +514,7 @@ $.getJSON("static/trips.json", function (data) {
     html +=
       '<div class="schedule__inner-item__date">' +
       startDate +
-      " — " +
+      " - " +
       endDate +
       "</div>";
     html +=
