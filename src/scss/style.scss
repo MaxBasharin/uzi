@@ -784,6 +784,7 @@ header.fixed {
   &__content {
     margin-right: 20px;
   }
+
   &__wrapper {
     padding-top: 20px;
     display: flex;
@@ -875,6 +876,7 @@ header.fixed {
 
     &.active {
       background-color: $blueColor;
+
       .icon-num-accordion {
         use {
           color: #fff;
@@ -983,6 +985,7 @@ header.fixed {
     &__visual {
       margin-right: 20px;
     }
+
     &__img {
       max-width: 360px;
       margin-bottom: 20px;
@@ -1414,7 +1417,7 @@ header.fixed {
           }
         }
 
-      
+
 
         &__accordion-item {
           border-radius: $mainRadius;
@@ -1793,7 +1796,7 @@ header.fixed {
 
     .info {
       &__img {
-        width: 400px;
+        margin-right: 20px;
 
         img {
           display: block;
@@ -2019,13 +2022,13 @@ header.fixed {
 
       &__top {
         margin: 0 auto;
-        width: 390px;
+        max-width: 390px;
         text-align: center;
       }
 
       &__bottom {
         display: flex;
-        
+
 
         .reviews__name {
           font-size: 16px;
@@ -2040,11 +2043,11 @@ header.fixed {
 
         .reviews__item {
           height: 200px;
-          width: 550%;
+          width: 50%;
         }
 
         .reviews__item+.reviews__item {
-          margin-left: 30px;
+          margin-left: 20px;
         }
       }
 
@@ -2250,8 +2253,11 @@ header.fixed {
         position: relative;
 
         img {
-
-          border-radius: $mainRadius;
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 15px;
         }
 
         &-text {
@@ -3106,8 +3112,12 @@ header.fixed {
         margin-bottom: 20px;
 
         img {
-          border-radius: $mainRadius;
           box-shadow: $blockBoxShadow;
+          display: block;
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          border-radius: 15px;
         }
 
         .director__icon-play {
@@ -3161,7 +3171,6 @@ header.fixed {
     }
 
     &-item__title {
-      padding: 20px 30px;
       border-radius: $mainRadius;
       margin-bottom: 10px;
 
@@ -3228,7 +3237,16 @@ header.fixed {
 .license {
   background-color: $grayColorBg;
   padding: 60px 0;
-
+&__img {
+  img {
+    box-shadow: 0px 5px 25px 0px rgba(0, 93, 255, 0.15);
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+  }
+}
   &__wrapper {
     background-color: #fff;
     padding: 40px;
@@ -3256,9 +3274,11 @@ header.fixed {
 
 .map {
   padding: 60px 0;
-&__wrapper {
-  position: relative;
-}
+
+  &__wrapper {
+    position: relative;
+  }
+
   .subtitle {
     font-size: 28px;
     font-weight: 700;
@@ -3780,7 +3800,7 @@ header.fixed {
   }
 
   &__slider {
-  
+
     &-img {
 
       img {
@@ -4141,62 +4161,119 @@ header.fixed {
       margin-bottom: 20px;
     }
   }
+
   .accordion {
     .icon-num-accordion {
       width: 16px;
       height: 20px;
     }
   }
+
   .advantages {
     &__swiper {
       height: auto;
       max-width: 340px;
     }
   }
+
   .teacher {
     &__accordion {
       &-wrapper {
-       .info__main {
-        max-width: 400px;
-       }
-       .info__video-item {
-        .info__video-btn {
-          
-          right: 10px;
+        .info__main {
+          max-width: 400px;
         }
-       }
-       .info__content {
-        padding: 20px;
-       }
+
+        .info__video-item {
+          .info__video-btn {
+
+            right: 10px;
+          }
+        }
+
+        .info__content {
+          padding: 20px;
+        }
       }
     }
   }
+
   .logistics {
     &__accordion {
       &-wrapper {
-       .info__main {
-        max-width: 400px;
-       }
-       .info__video-item {
-        .info__video-btn {
-          
-          right: 10px;
+        .info__main {
+          max-width: 400px;
         }
-       }
-       .info__content {
-        padding: 20px;
-       }
+
+        .info__video-item {
+          .info__video-btn {
+
+            right: 10px;
+          }
+        }
+
+        .info__content {
+          padding: 20px;
+        }
       }
     }
   }
+
   .map {
     .schedule {
       position: static;
       padding-top: 20px;
     }
   }
+
   .rf-map-container {
     left: -15px;
+  }
+
+  .consultation {
+    &__wrapper {
+      flex-direction: column;
+    }
+
+    &__item {
+      width: 100%;
+    }
+  }
+
+  .form-cosultation {
+    margin-left: 0;
+    margin-top: 20px;
+  }
+
+  .suitable {
+    &__wrapper {
+
+      .info__main {
+        max-width: 400px;
+      }
+
+      .info__img {
+        margin-right: 0;
+      }
+    }
+  }
+  .check-list {
+    &__wrapper {
+      flex-direction: column;
+      &-item + .check-list__wrapper-item {
+        margin-left: 0;
+        margin-top: 20px;
+      }
+      &-item__img {
+        img {
+          box-shadow: 0px 5px 25px 0px rgba(0, 93, 255, 0.15);
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 15px;
+        }
+      }
+    }
   }
 }
 
@@ -4205,11 +4282,21 @@ header.fixed {
     font-size: 32px;
     line-height: 36px;
     margin-bottom: 20px;
+
+    &.title--small {
+      font-size: 28px;
+      line-height: 32px;
+      margin-bottom: 20px;
+    }
   }
-.subtitle {
-  font-size: 18px;
-  margin-bottom: 20px;
-}
+
+
+
+  .subtitle {
+    font-size: 18px;
+    margin-bottom: 20px;
+  }
+
   .heading {
     font-size: 24px;
     line-height: 28px;
@@ -4347,7 +4434,7 @@ header.fixed {
   .direction {
     &__accordion {
       &-item {
-        padding: 10px;
+        padding: 20px;
 
         &.active {
           padding: 20px 30px;
@@ -4387,7 +4474,7 @@ header.fixed {
     }
 
     &__title {
-      font-size: 16px;
+      font-size: 18px;
     }
 
     &__btn {
@@ -4402,42 +4489,52 @@ header.fixed {
     &__num {
       margin-right: 10px;
     }
+
     &__item {
       max-width: 100%;
     }
+
     .icon-num-accordion {
       margin-right: 8px;
     }
+
     &__h6 {
       font-size: 18px;
       line-height: 22px;
     }
   }
+
   .icon-num-accordion {
     width: 16px;
     height: 20px;
   }
- 
+
   .salary {
     padding: 30px 0;
+
     .title {
       margin-bottom: 24px;
     }
+
     &__inner {
       flex-direction: column;
     }
+
     &__item {
       width: 100%;
       margin: 0 0 20px 0;
       padding: 70px 20px 20px 20px;
+
       &-sum {
         font-size: 20px;
         line-height: 24px;
       }
     }
-    &__item + .salary__item {
+
+    &__item+.salary__item {
       margin-left: 0;
-  }
+    }
+
     &-icon {
       top: 20px;
       left: 20px;
@@ -4450,11 +4547,13 @@ header.fixed {
     &__wrapper {
       flex-direction: column;
     }
+
     &__content {
       margin: 0;
       margin-bottom: 20px;
     }
   }
+
   .trust {
     &__wrapper {
       padding: 20px;
@@ -4467,13 +4566,16 @@ header.fixed {
       }
     }
   }
+
   .department {
     &__problem {
       margin-bottom: 20px;
+
       &-inner {
         flex-direction: column;
         align-items: flex-start;
       }
+
       &-item {
         font-size: 16px;
         line-height: 24px;
@@ -4481,72 +4583,89 @@ header.fixed {
         width: 100%;
       }
     }
+
     .info {
       &__visual {
         margin: 0;
         margin-bottom: 20px;
       }
+
       &__content {
         padding: 20px;
       }
+
       &__name {
         font-size: 24px;
         line-height: 26px;
       }
+
       &__basic {
         font-size: 16px;
         line-height: 22px;
       }
     }
+
     &__wrapper {
       align-items: center;
       flex-direction: column;
     }
   }
+
   .teacher {
     &__accordion {
       &-more {
         display: none;
       }
+
       &-num {
         width: 30px;
         margin-right: 10px;
       }
+
       &-btn {
         font-size: 16px;
         padding: 16px 32px 16px 12px;
       }
+
       &-heading {
         padding: 20px;
       }
+
       &-title {
         font-size: 18px;
       }
+
       &-btn {
         margin-right: 0;
       }
+
       &-wrapper {
         flex-direction: column;
+
         &__block {
           margin: 20px 0;
         }
+
         .btn {
           font-size: 18px;
         }
+
         .info {
           &__visual {
             max-width: 100%;
             margin-right: 0;
             margin-bottom: 20px;
           }
+
           &__main {
             max-width: 100%;
           }
-          
+
           &__name {
             font-size: 24px;
             line-height: 26px;
           }
+
           &__basic {
             font-size: 16px;
             line-height: 20px;
@@ -4555,50 +4674,62 @@ header.fixed {
       }
     }
   }
+
   .logistics {
     &__accordion {
       &-more {
         display: none;
       }
+
       &-num {
         width: 30px;
         margin-right: 10px;
       }
+
       &-btn {
         font-size: 16px;
         padding: 16px 32px 16px 12px;
       }
+
       &-heading {
         padding: 20px;
       }
+
       &-title {
-        font-size: 18px;
+        font-size: 20px;
       }
+
       &-btn {
         margin-right: 0;
       }
+
       &-wrapper {
         flex-direction: column;
+
         &__block {
           margin: 20px 0;
         }
+
         .btn {
           font-size: 18px;
         }
+
         .info {
           &__visual {
             max-width: 100%;
             margin-right: 0;
             margin-bottom: 20px;
           }
+
           &__main {
             max-width: 100%;
           }
-          
+
           &__name {
             font-size: 24px;
             line-height: 26px;
           }
+
           &__basic {
             font-size: 16px;
             line-height: 20px;
@@ -4608,50 +4739,181 @@ header.fixed {
     }
   }
 
-.map {
-  .schedule {
-    display: flex;
-    flex-wrap: wrap;
-    &__inner {
-      width: 50%;
-      flex-direction: column;
-      &-item {
-        &__block {
-          flex-direction: column;
-        }
-        &__date {
-          text-align: center;
-          margin-bottom: 5px;
-        }
-        &__town {
-          margin-bottom: 5px;
+  .map {
+    .schedule {
+      display: flex;
+      flex-wrap: wrap;
+
+      &__inner {
+        width: 50%;
+        flex-direction: column;
+
+        &-item {
+          &__block {
+            flex-direction: column;
+          }
+
+          &__date {
+            text-align: center;
+            margin-bottom: 5px;
+          }
+
+          &__town {
+            margin-bottom: 5px;
+          }
         }
       }
     }
   }
-}
-.rf-map-container {
-  top: -50%;
-}
-.services {
-  .title {
-    margin-bottom: 24px;
+
+  .rf-map-container {
+    top: -50%;
   }
-  &__inner {
+
+  .services {
+    .title {
+      margin-bottom: 24px;
+    }
+
+    &__inner {
+      flex-direction: column;
+      align-items: center;
+
+      &-item {
+        padding: 20px;
+        max-width: 100%;
+        margin-bottom: 20px;
+      }
+    }
+
+    .services__inner-item+.services__inner-item {
+      margin-left: 0;
+    }
+  }
+
+  .reviews {
+    &__item {
+      &-desktop {
+        display: none;
+      }
+    }
+
+    &__header-left {
+      margin-left: 0;
+    }
+  }
+
+  .consultation {
+    &__wrapper {
+      padding: 20px;
+    }
+  }
+
+  .metodist {
+    &__img {
+      img {
+        width: 100%;
+        height: auto;
+      }
+    }
+
+  }
+
+  .form-cosultation {
+    padding: 0;
+    border: none;
+  }
+
+  .suitable {
+    &__wrapper {
+      flex-direction: column;
+      .info {
+        &__main {
+          width: 100%;
+          max-width: 100%;
+        }
+
+        &__img {
+          margin-bottom: 20px;
+        }
+
+        &__content {
+          padding: 20px;
+        }
+
+        &__main {
+          font-size: 24px;
+          line-height: 26px;
+        }
+
+        &__basic {
+          font-size: 16px;
+          line-height: 20px;
+        }
+        &__name {
+          font-size: 24px;
+          line-height: 26px;
+        }
+        &__speciality {
+          font-size: 20px;
+        }
+      }
+    }
+  }
+  .diplom {
+    &__inner {
+      padding: 20px;
+      flex-direction: column;
+      &-item {
+        margin-bottom: 20px;
+       
+      }
+      &-item + .diplom__inner-item {
+        margin-left: 0;
+      }
+     
+    }
+  }
+  .poss__inner {
     flex-direction: column;
-    align-items: center;
 
     &-item {
-      padding: 20px;
-      max-width: 100%;
+      width: 100%;
       margin-bottom: 20px;
     }
   }
 
-  .services__inner-item+.services__inner-item {
+  .poss__inner-item+.poss__inner-item {
     margin-left: 0;
   }
-}
+  .frdo {
+    &__wrapper {
+      &-item {
+        max-width: 100%;
+        &--desktop {
+          display: none;
+        }
+      }
+    }
+  }
+  .director {
+    padding: 30px 0;
+    &__wrapper {
+      padding: 20px;
+      flex-direction: column-reverse;
+      &-item + .director__wrapper-item{
+        margin-left: 0;
+      }
+      .info {
+        &__content {
+          padding: 20px;
+        }
+        &__name {
+          font-size: 24px;
+        }
+      }
+    }
+  }
 }
 
 @media (max-width: 480px) {
@@ -4665,6 +4927,7 @@ header.fixed {
 
   .form-fixed {
     padding: 0 0 60px 0;
+
     &__date {
       display: flex;
       flex-direction: column;
@@ -4700,9 +4963,11 @@ header.fixed {
 
   .education {
     padding: 40px 0;
+
     &__wrapper {
       align-items: center;
     }
+
     &__visual {
       &-block {
         max-width: 300px;
@@ -4725,11 +4990,8 @@ header.fixed {
       }
     }
   }
-  .accordion {
-    &__title {
-      font-size: 13px;
-    }
-  }
+
+  
 
   .direction {
     padding: 30px 0;
@@ -4737,10 +4999,12 @@ header.fixed {
 
   .advantages {
     padding: 30px 0;
+
     &__wrapper {
       padding-top: 0;
     }
   }
+
   .trust {
     padding: 30px 0;
   }
@@ -4752,17 +5016,21 @@ header.fixed {
   .logistics {
     padding: 30px 0;
   }
+
   .wide {
     padding: 30px 20px;
+
     .swiper-wrapper {
       padding: 0;
     }
+
     .swiper-button-prev {
       top: auto;
       left: auto;
       right: 85px;
       bottom: 30px;
     }
+
     .swiper-button-next {
       top: auto;
       right: 30px;
@@ -4770,11 +5038,14 @@ header.fixed {
       bottom: 30px;
     }
   }
+
   .map {
     padding: 30px 0;
   }
+
   .services {
     padding: 30px 0;
+
     &__inner {
       &-item {
         &__title {
@@ -4796,11 +5067,76 @@ header.fixed {
 
   .news {
     padding: 30px 0;
+
     .swiper-wrapper {
       padding-bottom: 0;
     }
   }
+
   .trajectory {
+    padding: 30px 0;
+  }
+
+  .reviews {
+    padding: 30px 0;
+
+    &__name {
+      font-size: 18px;
+    }
+
+    &__speciality {
+      font-size: 16px;
+    }
+
+  }
+
+  .reviews__header-left__bottom .reviews__speciality {
+    font-size: 14px;
+  }
+
+  .consultation {
+    padding: 30px 0;
+
+    &__wrapper {
+      padding: 20px 10px;
+    }
+  }
+
+  .metodist {
+    width: 17%;
+
+    &__name {
+      font-size: 12px;
+      line-height: 16px;
+    }
+  }
+
+  .suitable{
+    padding: 30px 0;
+    &__wrapper {
+      .info__proof {
+        flex-direction: column;
+        align-items: center;
+      }
+      .info__simple {
+        margin-bottom: 20px;
+      }
+    }
+  }
+
+  .diplom {
+    padding: 30px 0;
+  }
+
+  .poss {
+    padding: 30px 0;
+  }
+
+  .curriculum {
+    padding: 30px 0;
+  }
+
+  .frdo {
     padding: 30px 0;
   }
 }
